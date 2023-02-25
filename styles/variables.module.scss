@@ -1,0 +1,6 @@
+/* variables.module.scss */
+$primary-color: tomato;
+
+:export {
+    primaryColor: $primary-color;
+}
