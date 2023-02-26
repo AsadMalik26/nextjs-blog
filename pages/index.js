@@ -68,47 +68,47 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps(ctx) {
-  let data = [
+// export async function getStaticProps(ctx) {
+// let data = [
+//   { id: 1, name: "Asad" },
+//   { id: 2, name: "Mubashar" },
+//   { id: 3, name: "Arslan" },
+// ]
+//   console.log("1. Static Props start", ctx)
+
+
+//   console.log("1. Static Props")
+//   return {
+//     // { console.log("Static Props Return") }
+//     props: {
+//       data: data
+//     }
+//   }
+// }
+
+export async function getServerSideProps(context) {
+  let data;
+  console.log("SErver side props ")
+  // let promise = await new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  data = [
+    { id: 4, name: "ALi" },
+    { id: 5, name: "Ahmad" },
+    { id: 6, name: "Ahsan" },
+  ]
+  //     resolve(data)
+  //     console.log("Reolved")
+  //   }, 10)
+  // })
+  data = [
     { id: 1, name: "Asad" },
     { id: 2, name: "Mubashar" },
     { id: 3, name: "Arslan" },
   ]
-  console.log("1. Static Props start", ctx)
-
-
-  console.log("1. Static Props")
   return {
-    // { console.log("Static Props Return") }
     props: {
-      data: data
-    }
-  }
+      // props for your component
+      data
+    },
+  };
 }
-
-// export async function getServerSideProps(context) {
-//   let data;
-//   console.log("SErver side props ")
-//   // let promise = await new Promise((resolve, reject) => {
-//   //   setTimeout(() => {
-      // data = [
-      //   { id: 4, name: "ALi" },
-      //   { id: 5, name: "Ahmad" },
-      //   { id: 6, name: "Ahsan" },
-      // ]
-//   //     resolve(data)
-//   //     console.log("Reolved")
-//   //   }, 10)
-//   // })
-//   data = [
-//     { id: 4, name: "ALi" },
-//     { id: 5, name: "Ahmad" },
-//     { id: 6, name: "Ahsan" },
-//   ]
-//   return {
-//     props: {
-//       // props for your component
-//       data
-//     },
-//   };
-// }
